@@ -1,0 +1,45 @@
+p {
+  font-family: Lato;
+}
+
+    table,
+    th {
+      border-collapse: collapse;
+      padding: 20px;
+    }
+    th span {
+      margin-left: 10px;
+      font-size: 10px;
+      color: #555;
+      cursor: pointer;
+    }
+    table {
+      border: solid #0005;
+	  overflow-y : scroll;
+    }
+    .tables {
+      border-left: solid #eee;
+      padding: 20px 40px;
+      background: #fff;
+      height: 80vh;
+	  overflow-y : scroll;
+    }
+    body {
+      background: #eee;
+    }
+    input{
+        margin-bottom: 20px 
+    }
+    .main {
+      border:10px solid #0002;
+      padding: 0;
+    }
+    .submit{
+      outline: none;
+    }
+    .error{
+    	color: red;
+    }
+
+
+

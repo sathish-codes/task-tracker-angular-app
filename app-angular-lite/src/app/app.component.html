@@ -1,0 +1,44 @@
+<body>
+    <div class="main container"><!-- -->
+      <div class="col-md-12">
+        <h1> Task Tracker</h1><p>V 2.0</p>
+      </div>
+      <div class="col-md-6 tables">
+        <h3>Create a Task</h3>
+        <form [formGroup]="addRowForm" *ngIf="addRowForm" (ngSubmit)="handleSubmit()">
+          <label>Test Name</label>
+          <input type="text" class="form-control" id='tname' required formControlName="tname">
+          <div *ngIf="submitted && formErrors.tname.errors" class="error"> Name required</div>
+          <label>Date</label>
+          <input type="date" class="form-control" id='tdate' required formControlName="tdate">
+          <div *ngIf="submitted && formErrors.tdate.errors" class="error"> Date required</div>
+          <label>Assigned To</label>
+          <input type="text" class="form-control" id='tassign' required formControlName="tassign">
+          <div *ngIf="submitted && formErrors.tassign.errors" class="error"> Assigned required</div>
+          <input type="submit" class="btn btn-primary submit" >
+        </form>
+        
+        <div class="err"></div>
+      </div>
+    <div class="container">
+      <div class="col-md-6 tables">
+        <h3>Existing Tasks</h3>
+        <table *ngFor="let item of names">
+          <th>
+            {{item.name}}
+            <span>{{item.date}}</span>
+          </th>
+          <th>
+            {{item.assigned}}
+            <span (click)="deleteRow(item)">X</span>
+          </th>
+        </table>
+      </div>
+    </div>
+    </div>
+
+    <!-- <div *ngFor="let name of names">
+      {{name.name}}
+    </div> -->
+
+  </body>
